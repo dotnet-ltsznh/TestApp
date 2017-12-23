@@ -3,7 +3,7 @@
 Public Class TestThreadPool
     Private maxUsedThreads As Int16 = 0 '检测使用的最大线程数
     Private testThreadsSleep As Int16 = 1 '检测使用的最大线程数
-    Private threadWaitTime As Int16 = 1000 '检测使用的最大线程数
+    Private threadWaitTime As Int16 = 1000 '线程休眠时间
 
     ''' <summary>
     ''' 测试传参的线程池，根据线程数判断任务是否全部结束
@@ -14,7 +14,7 @@ Public Class TestThreadPool
         Try
 #Region "多线程任务"
             Dim TPool As System.Threading.ThreadPool
-            'ThreadPool.SetMaxThreads(32, 32)
+            TPool.SetMaxThreads(2, 2)
 
             'Dim stateData1 As New StateData
             'stateData1.times = 3

@@ -5,14 +5,18 @@
         Try
             Console.WriteLine(Date.Now() & vbTab & "程序启动！")
 
-            Dim test As New TestThreadPool
+            'Dim test As New TestThreadPool
             'test.test()
-            test.testManulResetEvent()
+            'test.testManulResetEvent()
 
-            Console.WriteLine(Date.Now() & "程序运行结束！" & vbCrLf & "按回车键退出...")
+            Dim test As New TestGPS
+            test.printMapLongitudeLatitude(121.123, 31.123)
+
+
+            Console.WriteLine(Date.Now() & vbTab & "程序运行结束！" & vbCrLf & "按回车键退出...")
             Console.Read()
         Catch ex As Exception
-            Console.WriteLine(Date.Now() & "异常消息：" & ex.Message)
+            Console.WriteLine(Date.Now() & vbTab & "异常消息：" & vbTab & ex.Message)
             Console.Read()
         End Try
 
